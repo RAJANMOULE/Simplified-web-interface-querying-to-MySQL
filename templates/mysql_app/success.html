@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  {%load static%}
+<head>
+<style>
+  .center {
+          position: relative;
+          top:120px;
+          z-index: 1;
+          background: transparent;
+          max-width: 500px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgb(250, 37, 9);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 25px;
+          }
+
+</style>
+  <link rel="stylesheet" href="{% static 'images/e.jpg' %}">
+    
+    <title>success</title>
+    <style>        
+        </style>
+        
+</head>
+<body style="background-image:url('../static/images/e.jpg') ;">
+    <div class="center">
+    <p>Your new {{db_name}} created successfully.</p><br>
+    if you want to create database <a href="/new">click here</a> <br><br>
+    if you want to query the database <a href="/edit_query">click here</a>
+</div>>
+</body>
+</html>

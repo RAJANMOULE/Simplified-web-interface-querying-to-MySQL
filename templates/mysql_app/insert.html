@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'mysql_app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/a.jpg' %}">
+
+    <title>Insert Page</title>
+    <style>
+      .center {
+          position: relative;
+          top:160px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 500px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgb(253, 11, 11);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 20px;
+          }
+
+        h1{
+          text-align: center;
+          position: absolute;
+          left: 350px;
+          top: 20px;
+          font-size: 50px;
+        }
+        </style>
+        
+</head>
+<body style="background-image:url('../static/images/a.jpg') ;">
+    <h1>Welcome to data insert page</h1>
+    <div class="center">
+    {% block content %}
+    <form action="insert1" method="POST">
+        {% csrf_token %}
+        <label for="t_name">INSERT INTO</label>
+        <input type="text" name="t_name" placeholder="table name"/>
+        <input type="text" name="columns" placeholder="column names"/><br><br>
+        <label for="value">VALUES</label>
+        <input type="text" name="value" placeholder="values"/><br><br>
+        <input type="submit" value="submit"> 
+    </form>
+    {% endblock %}
+    </div>>
+</body>
+</html>

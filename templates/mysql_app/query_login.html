@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'mysql_app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+
+  <title>Query page</title>
+    <style>
+      .center {
+          position: relative;
+          top:150px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 380px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgb(44, 30, 238);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 35px;
+          }
+
+        h1{
+          text-align: center;
+          position: absolute;
+          left: 400px;
+          top: 20px;
+          font-size: 50px;
+        }
+        .button{
+          border: none;
+          font-size: medium;
+        }
+        </style>
+</head>
+<body style="background-image:url('../static/images/m.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+  <h1>Database query login page</h1>
+
+    <div class="center">
+    {% block content %}
+    <form action="../query_types" method="POST">
+    {%csrf_token%}
+    <label for="_db_name">Enter your Database Name</label><br><br>
+    <input type="text" name="_db_name"/><br><br>
+    <input type="submit" class="button" value="submit">
+    </form>
+    {% endblock %}
+    </div>
+</body>
+</html>

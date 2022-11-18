@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+  {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>login page</title>
+  <link rel="stylesheet"  href="{% static 'mysql_app/login_style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+
+  <style>
+     h1{
+          text-align: center;
+          position: absolute;
+          left: 300px;
+          top: 20px;
+          font-size: 50px;
+        }
+        .center {
+          position: relative;
+          top:100px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 380px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgba(255, 0, 0, 0.158);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 20px;
+          }
+
+  </style>
+</head>
+<body style="background-image:url('../static/images/l.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+  {% block content %}
+<!-- partial:index.partial.html -->
+<div class="center">
+  <h2>LOGIN PAGE</h2>
+  <form id="login-form" action="../login_succesfull" method="POST">
+    {% csrf_token %}
+    <p>
+    <input type="text" id="username" name="username" placeholder="Username" required autocomplete="off"><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" id="password" name="password" placeholder="password" required autocomplete="off"><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="submit" id="login" value="Login">
+    </p>
+{% endblock %}
+  </form>
+  
+</div><!--login-form-wrap-->
+<!-- partial -->
+  
+</body>
+</html>

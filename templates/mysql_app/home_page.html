@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+<head>
+  
+  <link rel="stylesheet" href="{% static 'mysql_app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+
+    <title>Homepage</title>
+    <style>
+        .center {
+          position: relative;
+          top:160px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 450px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgb(252, 24, 24);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 23px;
+          font-weight: 100;
+          }
+
+        h1{
+          text-align: center;
+          position: absolute;
+          left: 200px;
+          top: 20px;
+          font-size: 50px;
+        }
+        .button{
+          border: none;
+          font-size: medium;
+          background-color:brown;
+          color: rosybrown;
+        }
+          </style>
+        
+</head>
+<body style="background-image:url('../static/images/j.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+  <h1>Welcome to mini and advance Mysql Workbench</h1>
+    
+    <div class="center">
+    {% block content %}
+    <form action="../index" method="POST">
+    {%csrf_token%}
+    <label for="host">Enter your host name :</label>
+    <input type="text" name="host"/><br><br>
+    <label for="user">Enter your user id :</label>
+    <input type="text" name="user"/><br><br>
+    <label for="password">Enter your password :</label>
+    <input type="password" name="password"/><br> <br>
+    <input type="submit" class="button" value="submit"/>
+    </form>
+    {% endblock %}
+    </div>
+</body>
+</html>

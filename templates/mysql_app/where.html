@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'mysql_app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/a.jpg' %}">
+
+  <title>Where Page</title>
+    <style>
+        .center {
+          position: relative;
+          top:160px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 380px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgb(255, 0, 0);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 20px;
+          }
+
+        h1{
+          text-align: center;
+          position: absolute;
+          left: 420px;
+          top: 20px;
+          font-size: 50px;
+        }
+       
+        </style>
+        
+</head>
+<body style="background-image:url('../static/images/a.jpg') ;">
+    <h1>Welcome to Where page</h1>
+    {% block content %}
+    <div class="center">
+    <form action="/where1" method="POST">
+        {% csrf_token %}
+        <label for="c_name">SELECT</label>
+        <input type="text" name="c_name" placeholder="column name"/><br><br>
+        <label for="table_name">FROM</label>&emsp;
+        <input type="text" name="table_name" placeholder="table_name"/><br><br>
+        <label for="where">WHERE</label>
+        <input type="text" name="where" placeholder="where condition"><br><br>
+        <input type="submit" value="submit"/>
+    </form>
+    {% endblock %}
+</div>>
+</body>
+</html>

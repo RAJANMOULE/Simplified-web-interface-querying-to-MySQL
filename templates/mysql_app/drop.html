@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'mysql_app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/a.jpg' %}">
+
+    <title> Drop tablePage </title>
+    <style>
+         .center {
+          position: relative;
+          top:160px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 380px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgb(255, 0, 0);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 20px;
+          }
+
+        h1{
+          text-align: center;
+          position: absolute;
+          left: 400px;
+          top: 20px;
+          font-size: 50px;
+        }
+       
+        </style>
+        
+</head>
+<body style="background-image:url('../static/images/a.jpg') ;">
+    <h1>Welcome to drop table page</h1>
+    <div class="center">
+        {% block content %}
+        <form action="../drop1" method="POST">
+            {% csrf_token %}
+            <label for="t_name">Table name</label>
+            <input type="text" name="t_name"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% endblock %}
+    </div>
+</body>
+</html>

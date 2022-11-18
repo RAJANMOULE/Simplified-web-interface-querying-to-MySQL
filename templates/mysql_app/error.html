@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'mysql_app/style.css' %}">
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+
+  <title>Error page</title>
+    <style>
+      .center {
+          position: relative;
+          top:130px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 600px;
+          margin: 0 auto 100px;
+          padding: 20px;
+          text-align: center;
+          color:rgb(240, 14, 165);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 30px;
+          }
+
+        h1{
+          text-align: center;
+          position: absolute;
+          left: 450px;
+          top: 20px;
+          font-size: 50px;
+        }
+        .button{
+          border: none;
+          font-size: medium;
+        }
+        </style>
+</head>
+<body style="background-image:url('../static/images/t.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
+  <h1>Database Error page</h1>
+
+    <div class="center">
+    {% block content %}
+    <p><h4>The given databse name is wrong or the given login details must be wrong. <br>
+           So try to give correct details or open and check the details in mysql workbench.</h4></p>
+           <p> click this <a href="../home">HOME PAGE</a> to go home page again.</p>
+    {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+
+    <title>Page Title</title>
+    <style>
+        .center {
+          position: relative;
+          top:100px;
+          z-index: 1;
+          background: transparent;          
+          max-width: 380px;
+          margin: 0 auto 100px;
+          padding: 45px;
+          text-align: center;
+          color:rgba(255, 0, 0, 0.158);
+          box-shadow: 0 0 20px 0 rgba(55, 55, 55, 0.2), 0 5px 5px 0 rgba(55, 55, 55, 0.24);
+          font-size: 20px;
+          }
+
+        body{
+            background-image: url('d.jpg');
+        }
+        </style>
+        
+</head>
+<body  style="background-image:url('../static/images/new.jpg') ;">
+    <div class="center">
+    <p>
+        {% for j in data %}
+        {{j}}
+    {% endfor %}
+    </p>
+    <p><a href="../query_types">Query selection</a> &emsp; <a href="../exit">Exit</a></p>
+
+    </div>
+</body>
+</html>

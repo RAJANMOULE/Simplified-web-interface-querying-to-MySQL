@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'images/new.jpg' %}">
+    <style>
+        p {
+          position: relative;
+          text-align: center;
+          color:rgb(252, 10, 199);
+          font-size: 25px;
+          }
+    </style>
+<title>Page Title</title>
+  
+</head>
+<body style="background-image:url('../static/images/new.jpg') ;">
+    <p>
+        {% for j in data %}
+        {{j}}
+    {% endfor %}
+    <p><a href="../query_types">Query selection</a> &emsp; <a href="../exit">Exit</a></p>
+
+    </p>
+    
+</body>
+</html>
